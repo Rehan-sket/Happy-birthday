@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday My Amazing Friend! 🌟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            touch-action: manipulation;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 50px 40px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .birthday-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #ffd700, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.6);
+            }
+        }
+
+        .friend-name {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin: 25px 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-8px);
+            }
+            60% {
+                transform: translateY(-4px);
+            }
+        }
+
+        .message {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin: 25px 0;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .personal-message {
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.15), rgba(255, 107, 107, 0.15));
+            padding: 30px;
+            border-radius: 20px;
+            margin: 35px 0;
+            border-left: 4px solid #ffd700;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .qualities {
+            margin: 30px 0;
+        }
+
+        .quality-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 50px;
+            margin: 12px 0;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .quality-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cake-button {
+            background: linear-gradient(45deg, #ff6b6b, #ffd700);
+            border: none;
+            padding: 18px 35px;
+            font-size: 1.3rem;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 25px 0;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cake-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .cake-animation {
+            margin: 30px 0;
+            display: none;
+            position: relative;
+            height: 250px;
+        }
+
+        .cake {
+            width: 150px;
+            height: 100px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e, #ffd700);
+            border-radius: 15px 15px 0 0;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .cake::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 15px;
+            width: 120px;
+            height: 25px;
+            background: #ffd700;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .candle {
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 40px;
+            background: linear-gradient(to bottom, #ff6b6b, #ffd700);
+            border-radius: 4px;
+        }
+
+        .flame {
+            position: absolute;
+            top: -55px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 25px;
+            background: radial-gradient(circle, #ffd700, #ff6b6b);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flicker 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+            100% {
+                transform: translateX(-50%) scale(1.2);
+            }
+        }
+
+        .knife {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 10px;
+            background: linear-gradient(to right, #aaa, #fff, #aaa);
+            border-radius: 5px;
+            display: none;
+            z-index: 5;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .knife::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: -8px;
+            width: 25px;
+            height: 25px;
+            background: #666;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 20px auto;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #ffd700);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+
+        .instruction {
+            font-size: 1.1rem;
+            color: #ffd700;
+            margin: 10px 0;
+            display: none;
+        }
+
+        .cutting-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffd700;
+            margin-top: 20px;
+            display: none;
+            animation: pulse 1s infinite;
+        }
+
+        .closing-message {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffd700;
+            margin-top: 40px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            margin-top: 40px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .birthday-title {
+                font-size: 2.5rem;
+            }
+
+            .friend-name {
+                font-size: 1.8rem;
+            }
+
+            .message {
+                font-size: 1.1rem;
+            }
+
+            .card {
+                padding: 30px 25px;
+            }
+
+            .cake-button {
+                padding: 15px 25px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Confetti fall animation moved here for performance */
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="birthday-title">🎂 Happy Birthday! 🎉</h1>
+
+            <div class="friend-name">TO MY DEAREST FRIEND</div>
+
+            <p class="message">
+                On this special day, I want you to know how incredibly grateful I am to have you in my life. 
+                You bring so much joy and light to everyone around you.
+            </p>
+
+            <div class="personal-message">
+                <p>
+                    "Your kindness knows no bounds, your laughter is contagious, and your heart is pure gold. 
+                    You have this amazing ability to make everyone feel special and valued. Thank you for being 
+                    the wonderful person you are!"
+                </p>
+            </div>
+
+            <div class="qualities">
+                <div class="quality-item">✨ Your incredible sense of humor</div>
+                <div class="quality-item">💫 Your unwavering loyalty</div>
+                <div class="quality-item">🌟 Your compassionate heart</div>
+                <div class="quality-item">❤️ Your amazing friendship</div>
+            </div>
+
+            <button class="cake-button" onclick="startCakeCutting()">
+                🎂 Cut the Birthday Cake!
+            </button>
+
+            <div class="cake-animation" id="cakeAnimation">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="instruction" id="instruction">
+                    Hold anywhere on screen to cut the cake! 👇
+                </div>
+
+                <div class="cake" id="cake">
+                    <div class="candle"></div>
+                    <div class="flame"></div>
+                </div>
+
+                <div class="knife" id="knife"></div>
+
+                <div class="cutting-text" id="cuttingText">Happy Birthday! Cake is cut! 🍰🎉</div>
+            </div>
+
+            <p class="closing-message">
+                May your day be filled with endless joy, laughter, and beautiful moments!
+            </p>
+
+            <footer>
+                <p>Made with love for your special day 💖</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        let isCutting = false;
+        let cutProgress = 0;
+        let cuttingAnimationFrame;
+
+        const progressFill = document.getElementById('progressFill');
+        const knife = document.getElementById('knife');
+        const cake = document.getElementById('cake');
+        const cuttingText = document.getElementById('cuttingText');
+        const instruction = document.getElementById('instruction');
+        const cakeAnimation = document.getElementById('cakeAnimation');
+        const progressBar = document.getElementById('progressBar');
+        const cakeButton = document.querySelector('.cake-button');
+
+        function startCakeCutting() {
+            // Hide the button and show animation elements
+            cakeButton.style.display = 'none';
+            cakeAnimation.style.display = 'block';
+            progressBar.style.display = 'block';
+            instruction.style.display = 'block';
+            knife.style.display = 'block';
+
+            // Reset progress and styles
+            cutProgress = 0;
+            progressFill.style.width = '0%';
+            knife.style.transform = 'translateX(-50%) translateY(0)';
+            cake.style.transform = 'translateX(-50%) translateX(0)';
+            cuttingText.style.display = 'none';
+
+            // Add event listeners
+            document.addEventListener('mousedown', startCutting);
+            document.addEventListener('touchstart', startCutting, { passive: false });
+            document.addEventListener('mouseup', stopCutting);
+            document.addEventListener('touchend', stopCutting);
+        }
+
+        function startCutting(event) {
+            event.preventDefault();
+            if (!isCutting) {
+                isCutting = true;
+                cuttingStep();
+            }
+        }
+
+        function cuttingStep() {
+            if (!isCutting) return;
+
+            if (cutProgress < 100) {
+                cutProgress += 1; // slower increment for smoother animation
+                progressFill.style.width = cutProgress + '%';
+                knife.style.transform = `translateX(-50%) translateY(${25 + cutProgress * 0.5}px)`;
+
+                // Subtle shake effect every 3 frames
+                if (cutProgress % 3 === 0) {
+                    cake.style.transform = `translateX(-50%) translateX(${Math.random() * 2 - 1}px)`;
+                }
+
+                cuttingAnimationFrame = requestAnimationFrame(cuttingStep);
+            } else {
+                completeCutting();
+            }
+        }
+
+        function stopCutting() {
+            if (isCutting) {
+                isCutting = false;
+                cancelAnimationFrame(cuttingAnimationFrame);
+                if (cutProgress >= 100) {
+                    completeCutting();
+                }
+            }
+        }
+
+        function completeCutting() {
+            instruction.style.display = 'none';
+            cuttingText.style.display = 'block';
+
+            createConfetti();
+
+            // Remove event listeners to prevent further cutting
+            document.removeEventListener('mousedown', startCutting);
+            document.removeEventListener('touchstart', startCutting);
+            document.removeEventListener('mouseup', stopCutting);
+            document.removeEventListener('touchend', stopCutting);
+        }
+
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9c74f', '#90be6d', '#f9844a', '#277da1', '#ffd700'];
+            const confettiCount = 40; // Reduced from 80
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                const size = Math.random() * 15 + 5;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px'; // circle shape
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = '50%';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-20px';
+                confetti.style.animation = `fall ${(Math.random() * 3 + 2)}s linear forwards`;
+                confetti.style.zIndex = '1000';
+                confetti.style.pointerEvents = 'none';
+
+                document.body.appendChild(confetti);
+
+                confetti.addEventListener('animationend', () => {
+                    confetti.remove();
+                });
+            }
+        }
+    </script>
+</body>
+</html>
